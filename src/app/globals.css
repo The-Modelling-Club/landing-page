@@ -7,15 +7,30 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@apply font-paragraph font-light
+}
+
+
+mark {
+  all: unset;
+  @apply text-secondary
+}
+
+@layer base {
+    input,
+    select,
+    textarea {
+      @apply rounded-lg border px-4 py-2.5  outline-none ring-1 ring-gray-300 duration-300 placeholder:text-sm focus:ring-gray-200 disabled:pointer-events-none disabled:opacity-50 md:placeholder:text-base;
+    }
+  
+       input[type="checkbox"], input[type="radio"] {
+              @apply h-4 w-4 cursor-pointer appearance-none rounded-md border border-gray-300 bg-contain bg-center bg-no-repeat p-1 align-top transition duration-200 checked:border-transparent  focus:outline-none;
+              background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414L9 11.586l6.293-6.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>');
+              background-size: 100% 100%;
+      }
+      input[type="checkbox"]:checked {
+              @apply  ring-2 ring-offset-2;
+      }
 }
