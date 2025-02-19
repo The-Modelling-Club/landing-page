@@ -1,7 +1,7 @@
 import NewsLetter from "./model/newsletter";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextRequest, res: any) {
   const { email } = (await req.json()) as { email: string };
 
   try {
