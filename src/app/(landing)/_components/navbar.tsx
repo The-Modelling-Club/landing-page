@@ -18,7 +18,7 @@ export default function Navbar() {
             <Link href={"/projects"}>Projects</Link>
           </li>
           <li className=" hover:text-secondary hover:underline">
-            <Link href={"/team"}>Team</Link>
+            <Link href={"/team"}>About Us</Link>
           </li>
         </ul>
       </nav>

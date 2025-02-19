@@ -1,12 +1,8 @@
-"use client";
 import Image from "next/image";
 import ImageOne from "@/app/assets/images/green_hydrogen.jpeg";
-import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
-import { Icon } from "@iconify/react/dist/iconify.js";
-
+import Executives from "./_components/executives";
+import SlotCounter from "react-slot-counter";
 export default function AboutPage() {
-  const router = useRouter();
   return (
     <div>
       <section className="  grid md:grid-cols-2 gap-4 place-content-center p-6">
@@ -14,7 +10,7 @@ export default function AboutPage() {
           <Image src={ImageOne} alt="about" width={2000} height={2000} className=" object-cover  object-top h-full w-full " />
         </div>
         <div className=" p-4 lg:p-6">
-          <h3 className=" mb-4 text-3xl text-primary-500">About Us</h3>
+          <h3 className=" mb-4 text-3xl font-semibold text-primary-500">About Us</h3>
           <p className=" text-justify">
             Alpha Pro Janitorial Service is a residential and commercial cleaning service company located in Mississauga and Brampton, Ontario in Canada. Our
             current target market is residential homes and professional offices with cleanable office space in the Peel Region and some areas in Halton. 
@@ -32,26 +28,34 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
-      <div className=" p-6 text-center bg-primary text-white ">
-        <h3 className=" font-semibold mb-4">Request the UK’s 2024 report on the mental health crisis</h3>
-        <p>Access key insights on religious referral rates and the crucial role your church can play in this crisis.</p>
-        <Button
-          onClick={() => {
-            // router.push("/get-started");
-          }}
-          className=" mx-auto bg-white text-primary hover:bg-white/90 mt-4 w-fit"
-        >
-          Donate to support us
-          <Icon icon={"solar:alt-arrow-right-outline"} className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-        </Button>
+      <div className=" p-6 flex justify-evenly text-center bg-primary text-white ">
+        <div>
+          <h1 className=" text-[96px] text-secondary">
+            <SlotCounter value="300" animateOnVisible={{ triggerOnce: false, rootMargin: "0px 0px -100px 0px" }} />+
+          </h1>
+          <p className=" ">Active Members</p>
+        </div>
+        <div>
+          <h1 className=" text-[96px] text-secondary">
+            <SlotCounter value="4" animateOnVisible={{ triggerOnce: false, rootMargin: "0px 0px -100px 0px" }} />+
+          </h1>
+          <p className="">Active Projects</p>
+        </div>
+        <div>
+          <h1 className=" text-[96px] text-secondary">
+            <SlotCounter value="250" animateOnVisible={{ triggerOnce: false, rootMargin: "0px 0px -100px 0px" }} />+
+          </h1>
+          <p className="">Students trained</p>
+        </div>
       </div>
-      <section className="  grid lg:grid-cols-2 mt-10 gap-4 p-6 py-20">
-        <article className="bg-gray-100 w-full h-full">
-          <h3 className=" text-primary mb-3 underline">Our Vision</h3>
+      <Executives />
+      <section className="  grid lg:grid-cols-2 my-10 gap-4 p-6">
+        <article className="bg-gray-100 rounded-xl p-6 w-full h-full">
+          <h3 className="text-primary mb-3 text-lg font-semibold">Our Vision</h3>
           <p className=" text-slate-900">Our vision is to become the janitorial service company of choice in our operating area.</p>
         </article>
-        <article className=" bg-gray-100 w-full h-full">
-          <h3 className=" text-primary-500 mb-3 underline">Our Mission</h3>
+        <article className=" bg-gray-100 rounded-xl p-6 w-full h-full">
+          <h3 className=" text-primary mb-3 text-lg font-semibold">Our Mission</h3>
           <p className=" text-slate-900">
             Our Mission Our goal is to provide a clean and healthy environment for our customers with a focus on quality and a commitment to customer service.
           </p>

@@ -54,7 +54,7 @@ export default function Footer() {
               <Link href={"/"} className="hover:text-secondary hover:translate-x-2 transition-all duration-300 ">
                 Home
               </Link>
-              <Link href={"/about"} className="hover:text-secondary hover:translate-x-2 transition-all duration-300">
+              <Link href={"/team#executives"} className="hover:text-secondary hover:translate-x-2 transition-all duration-300">
                 Meet the team
               </Link>
               <Link href={"/services"} className="hover:text-secondary hover:translate-x-2 transition-all duration-300">
