@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { GithubIcon, LinkedinIcon, InstagramIcon, YoutubeIcon } from "lucide-react";
 import Image from "next/image";
+import { Spinner } from "./spinner";
 // import Logo from "@/app/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import { Icon } from "@iconify/react/dist/iconify.js";
@@ -21,7 +22,7 @@ export default function Footer() {
     setLoading(true);
     try {
       const payload = { email };
-      const res = await axios.post("/api/waitlist", payload);
+      const res = await axios.post("/api/newsletter", payload);
       toast.success(res.data.message);
       setEmail("");
     } catch (e: any) {
@@ -94,8 +95,7 @@ export default function Footer() {
                   disabled={loading || !email}
                   className=" bg-slate-500  p-2 h-fit hover:bg-secondary disabled:cursor-not-allowed disabled:opacity-60 rounded-full"
                 >
-                  {loading ? "Loading..." : <Icon icon={"ph:telegram-logo-thin"} className=" size-4" />}
-                  {/* {loading ? <Spinner size="1rem" color="#fff" /> : <Icon icon={"ph:telegram-logo-thin"} className=" size-4" />} */}
+                  {loading ? <Spinner size="1rem" color="#fff" /> : <Icon icon={"ph:telegram-logo-thin"} className=" size-4" />}
                 </Button>
               </div>
             </div>
