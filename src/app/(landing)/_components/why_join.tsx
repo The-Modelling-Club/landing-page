@@ -8,11 +8,11 @@ type Props = {};
 
 export default function WhyJoinUs({}: Props) {
   return (
-    <section className="relative bg-primary p-24">
+    <section className="relative bg-primary py-12 lg:p-24">
       <Image src={Line3} alt="line-1" className="absolute grayscale -top-2 md:-top-44 opacity-20 " />
       <div className="container mx-auto px-4">
         <div className=" mx-auto text-center text-white mb-20 w-fit">
-          <h1 className=" tet-4xl md:text-6xl">Why Join Us</h1>
+          <h1 className=" text-2xl text-white font-extrabold tracking-tight sm:text-4xl md:text-5xl">Why Join Us</h1>
           <p className=" mt-2 mb-8">Addressing Mental Health Challenges Head-On</p>
         </div>
 

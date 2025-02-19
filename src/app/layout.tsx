@@ -26,6 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta name="theme-color" content="#2C323E" />
       <body className={`${geistSans.variable} ${heading.variable} antialiased`}>
         <Navbar />
         {children}

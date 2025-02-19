@@ -55,3 +55,38 @@ export const slideInFromRight = {
     },
   },
 };
+
+export const menuLinks = [
+  {
+    name: "Articles",
+    href: "/articles",
+    icon: "solar:graph-new-up-line-duotone",
+    activeIcon: "solar:graph-new-bold-duotone",
+    dropdown: false,
+    // dropdown: <NavbarSolutionsDropdown />,
+  },
+  {
+    name: "Events",
+    href: "/",
+    icon: "solar:documents-line-duotone",
+    activeIcon: "solar:documents-bold-duotone",
+    dropdown: false,
+    // dropdown: <NavbarResourcesDropdown />,
+  },
+
+  {
+    name: "About",
+    href: "/team",
+    icon: "solar:info-square-line-duotone",
+    activeIcon: "solar:info-square-bold-duotone",
+    dropdown: false,
+  },
+
+  {
+    name: "Projects",
+    href: "/projects",
+    icon: "solar:card-2-line-duotone",
+    activeIcon: "solar:card-2-bold-duotone",
+    dropdown: false,
+  },
+];

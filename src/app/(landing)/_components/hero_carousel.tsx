@@ -15,39 +15,24 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 export function HeroCarousel() {
   const items = [
     {
-      title: "The Support Hub",
-      type: "support",
-      description: "Empowers leaders and advocates with tools and resources",
       image: ImageOne,
     },
     {
-      title: "The Member App",
-      type: "member",
-      description: "Provides church members with on-the-go access to support and resources",
       image: ImageTwo,
     },
     {
-      title: "Core Bundle",
-      type: "core",
-      description: "Your Complete Solution for Church Mental Health",
       image: ImageThree,
     },
     {
-      title: "Core Bundle",
-      type: "core",
-      description: "Your Complete Solution for Church Mental Health",
       image: ImageFour,
     },
     {
-      title: "Core Bundle",
-      type: "core",
-      description: "Your Complete Solution for Church Mental Health",
       image: ImageFive,
     },
   ];
 
   return (
-    <div className="space-y-4  h-full p-4">
+    <div className="space-y-4 h-full p-4">
       <Carousel
         opts={{
           align: "start",
@@ -62,11 +47,11 @@ export function HeroCarousel() {
       >
         <CarouselContent className="-ml-2 md:-ml-4 h-full">
           {items.map((item, index) => (
-            <CarouselItem key={index} className="h-[35rem]">
+            <CarouselItem key={index} className=" h-[25rem] lg:h-[35rem]">
               <Card className={`relative border-none h-full overflow-hidden`}>
                 <CardContent className="p-0  h-full">
                   <div className="relative h-full ">
-                    <Image src={item.image} alt={item.title} className="w-full h-full object-center object-cover" />
+                    <Image src={item.image} alt={"hero"} className="w-full h-full object-center object-cover" />
                   </div>
                 </CardContent>
               </Card>

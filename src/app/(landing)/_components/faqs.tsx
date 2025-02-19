@@ -42,7 +42,7 @@ const faqs = [
 
 export default function FAQS() {
   return (
-    <div className={"flex flex-col items-center bg-white py-6 md:pt-24"}>
+    <div className={"flex flex-col items-center bg-white p-6 md:pt-24"}>
       <h2 className={"mb-2 text-center text-2xl text-primary-900 md:text-3xl lg:text-4xl"}>Any questions? We&apos;re here for you.</h2>
       <p className={"mb-12 max-w-screen-sm text-center md:text-lg"}>
         We&apos;ve been doing this for sometime now so we&apos;ve pulled together some of the more questions we get asked.

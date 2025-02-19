@@ -10,18 +10,18 @@ import HeroAbout from "./_components/about";
 
 export default function Home() {
   return (
-    <div className="w-full">
-      <div className="grid grid-cols-2 w-full h-screen max-h-[38rem] ">
+    <div className="w-full ">
+      <div className="grid lg:grid-cols-2 w-full min-h-screen  ">
         <div className=" w-full h-full">
           <section className="p-4 grid gap-4 place-content-center  w-full h-full">
             <Link
               href={"/"}
-              className="border group flex items-center text-sm mb-4 hover:bg-slate-100 hover:text-primary transition-colors  rounded-full w-fit px-4 py-1 gap-4"
+              className="border group flex items-center text-sm mb-4 bg-slate-100 hover:bg-slate-200 hover:text-primary transition-colors  rounded-full mt-4 md:mt-0 w-fit px-4 py-1 gap-4"
             >
-              <span className=" ">📣 Launching Official Website: The Modelling Club website launch</span>
+              <span className=" line-clamp-1">📣 Launching Official Website: The Modelling Club website launch</span>
               <Icon icon={"solar:alt-arrow-right-outline"} className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
-            <h1 className=" text-5xl text-primary font-bold">
+            <h1 className=" text-3xl lg:text-5xl text-primary font-bold">
               Empowering innovation and <mark>solving real-world </mark> challenges
             </h1>
             <p>
@@ -40,7 +40,7 @@ export default function Home() {
             </div>
           </section>
         </div>
-        <section className=" w-full h-full">
+        <section className=" mb-8 w-full h-full">
           <HeroCarousel />
         </section>
       </div>

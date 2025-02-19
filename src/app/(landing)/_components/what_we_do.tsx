@@ -11,7 +11,7 @@ export default function WhatWeDo() {
   return (
     <div className="mt-20 ">
       <div className=" mx-auto text-center w-fit">
-        <h1 className=" tet-4xl md:text-6xl">What We Do</h1>
+        <h1 className=" text-2xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">What We Do</h1>
         <p className=" mt-2 mb-8">Addressing Mental Health Challenges Head-On</p>
       </div>
       <section className="relative space-y-4  lg:grid grid-cols-3  gap-4 lg:gap-8 p-4 lg:p-6">
