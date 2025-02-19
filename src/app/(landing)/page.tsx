@@ -10,8 +10,8 @@ import HeroAbout from "./_components/about";
 
 export default function Home() {
   return (
-    <div className="w-full ">
-      <div className="grid lg:grid-cols-2 w-full min-h-screen  ">
+    <div className="w-full overflow-x-hidden">
+      <div className="grid lg:grid-cols-2 lg:p-6 w-full min-h-screen  ">
         <div className=" w-full h-full">
           <section className="p-4 grid gap-4 place-content-center  w-full h-full">
             <Link

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { TwitterIcon, LinkedinIcon, InstagramIcon, YoutubeIcon } from "lucide-react";
+import { GithubIcon, LinkedinIcon, InstagramIcon, YoutubeIcon } from "lucide-react";
 import Image from "next/image";
 // import Logo from "@/app/assets/logo.png";
 import { Button } from "@/components/ui/button";
@@ -65,13 +65,13 @@ export default function Footer() {
           <div className="flex flex-col items-center min-w-max lg:items-start">
             <h1 className="font-semibold text-xl">Projects</h1>
             <div className="flex flex-col items-center md:items-start md:text-left my-6 space-y-3">
-              <Link href={"/services#residential-cleaning-service"} className="hover:text-secondary hover:translate-x-2 transition-all duration-300">
+              <Link href={"/projects#virtual-catalytic-reactor"} className="hover:text-secondary hover:translate-x-2 transition-all duration-300">
                 Virtual Catalytic Reactor
               </Link>
-              <Link href={"/services#office-cleaning-service"} className="hover:text-secondary hover:translate-x-2 transition-all duration-300">
+              <Link href={"/projects#gas-turbine-simulator"} className="hover:text-secondary hover:translate-x-2 transition-all duration-300">
                 Gas Turbine Simulator
               </Link>
-              <Link href={"/services#laundry-cleaning-service"} className="hover:text-secondary hover:translate-x-2 transition-all duration-300">
+              <Link href={"/projects#chemcost"} className="hover:text-secondary hover:translate-x-2 transition-all duration-300">
                 ChemCost
               </Link>
             </div>
@@ -107,7 +107,7 @@ export default function Footer() {
           <p className=" mx-auto text-[.8rem] mt-6">&copy; {date} The Modelling Club, KNUST | All rights reserved.</p>
         </section>
 
-        <section>
+        {/* <section>
           <div className="flex justify-center py-6 gap-4">
             <Link href={"/"} className=" hover:text-secondary">
               Terms of Use
@@ -116,6 +116,19 @@ export default function Footer() {
             <Link href={"/"} className=" hover:text-secondary">
               Privacy Policy
             </Link>
+          </div>
+        </section> */}
+        <section>
+          <div className="flex justify-center py-6 gap-4">
+            <a href="https://www.instagram.com/botr.app?igsh=bG92OWliMHFjYmF3" target="_blank" rel="noopener noreferrer">
+              <InstagramIcon size={16} className="hover:text-secondary transition-all duration-300 cursor-pointer hover:-translate-y-1" />
+            </a>
+            <Link href="https://www.linkedin.com/company/built-on-the-rock-app?trk=ppro_cprof" target="_blank" rel="noopener noreferrer">
+              <LinkedinIcon size={16} className="hover:text-secondary transition-all duration-300 cursor-pointer hover:-translate-y-1" />
+            </Link>
+            <a href="https://github.com/The-Modelling-Club/" target="_blank" rel="noopener noreferrer">
+              <GithubIcon size={16} className="hover:text-secondary transition-all duration-300 cursor-pointer hover:-translate-y-1" />
+            </a>
           </div>
         </section>
       </section>

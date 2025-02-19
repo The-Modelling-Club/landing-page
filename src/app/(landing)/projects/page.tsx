@@ -10,7 +10,7 @@ export default function ServicesPage() {
   return (
     <div className=" py-12 p-4">
       <section className=" mt-20 lg:mt-0 max-w-screen-md mx-auto text-center">
-        <h1 className=" text-6xl font-semibold mb-4 ">Our Projects</h1>
+        <h1 className="  text-4xl lg:text-6xl font-semibold mb-3 ">Our Projects</h1>
         <p>Here, you'll find a collection of cool tools and simulations we've built to solve real-world problems using computer-aided design.</p>
       </section>
       <section className=" max-w-screen-lg mt-8 py-6 mx-auto">
@@ -30,9 +30,9 @@ export default function ServicesPage() {
                 <h3 className=" text-primary font-bold text-2xl mb-6">
                   {i + 1}. {s.name}
                 </h3>
-                <p className=" whitespace-pre-wrap text-justify">{s.descriptionOne}</p>
+                <p className=" whitespace-pre-wrap ">{s.descriptionOne}</p>
               </div>
-              <div className="border whitespace-pre-wrap text-justify bg-stone-50 p-4 rounded-lg">
+              <div className="border whitespace-pre-wrap  bg-stone-50 p-4 rounded-lg">
                 <h6 className="mb-4 text-accent font-semibold">Description</h6>
                 <p>{s.descriptionTwo}</p>
               </div>

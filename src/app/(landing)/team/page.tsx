@@ -9,7 +9,7 @@ export default function AboutPage() {
         <div className=" w-full  lg:w-4/5 h-[20rem] md:h-[30rem] rounded-xl  overflow-hidden mx-auto">
           <Image src={ImageOne} alt="about" width={2000} height={2000} className=" object-cover  object-top h-full w-full " />
         </div>
-        <div className=" p-4 lg:p-6">
+        <div className=" lg:p-6">
           <h3 className=" mb-4 text-3xl font-semibold text-primary-500">About Us</h3>
           <p className=" text-justify">
             Alpha Pro Janitorial Service is a residential and commercial cleaning service company located in Mississauga and Brampton, Ontario in Canada. Our
@@ -28,7 +28,7 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
-      <div className=" p-6 flex justify-evenly text-center bg-primary text-white ">
+      <div className=" p-6 flex flex-col lg:flex-row justify-evenly text-center bg-primary text-white ">
         <div>
           <h1 className=" text-[96px] text-secondary">
             <SlotCounter value="300" animateOnVisible={{ triggerOnce: false, rootMargin: "0px 0px -100px 0px" }} />+
@@ -49,7 +49,7 @@ export default function AboutPage() {
         </div>
       </div>
       <Executives />
-      <section className="  grid lg:grid-cols-2 my-10 gap-4 p-6">
+      <section className="  grid lg:grid-cols-2 mb-10 gap-4 p-6">
         <article className="bg-gray-100 rounded-xl p-6 w-full h-full">
           <h3 className="text-primary mb-3 text-lg font-semibold">Our Vision</h3>
           <p className=" text-slate-900">Our vision is to become the janitorial service company of choice in our operating area.</p>

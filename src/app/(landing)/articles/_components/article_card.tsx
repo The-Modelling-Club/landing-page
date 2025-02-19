@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function ArticleCard({ article }: { article: ArticlePost }) {
   return (
-    <Link href={`/articles/${article.slug}`} className=" grid group border grid-cols-[40%_auto]">
+    <Link href={`/articles/${article.slug}`} className=" grid group border sm:grid-cols-[40%_auto]">
       <section className=" max-h-[20rem] overflow-hidden">
         <Image
           src={article.image_url}

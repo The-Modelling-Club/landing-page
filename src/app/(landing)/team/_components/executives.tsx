@@ -40,7 +40,7 @@ export default function Executives() {
           </div>
         </section>
 
-        <div className=" grid grid-cols-4 p-6 place-content-center mt-6 gap-4 gap-y-20">
+        <div className=" grid md:grid-cols-3 lg:grid-cols-4 p-6 place-content-center mt-6 gap-4 gap-y-10 lg:gap-y-20">
           {executives.map((item) => {
             return (
               <div key={item.name}>
