@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Cormorant } from "next/font/google";
-import "./globals.css";
+
+import Footer from "./_components/footer";
+import Navbar from "./_components/navbar";
+
 const geistSans = Bricolage_Grotesque({
   variable: "--font-paragraph",
   subsets: ["latin"],
@@ -18,16 +21,16 @@ export const metadata: Metadata = {
     "Providing local solutions through the use of Computer Aided Engineering",
 };
 
-export default function RootLayout({
+export default function LandingPageLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${heading.variable} antialiased`}>
-        {children}
-      </body>
-    </html>
+    <main className="overflow-x-hidden">
+      <Navbar />
+      {children}
+      <Footer />
+    </main>
   );
 }
