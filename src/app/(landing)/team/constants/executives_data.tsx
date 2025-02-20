@@ -2,6 +2,7 @@ import ImageOne from "@/app/assets/images/bio energy.jpg";
 import ImageTwo from "@/app/assets/images/jro_rich.jpg";
 import ImageThree from "@/app/assets/images/maspolic_one.jpg";
 import ImageFour from "@/app/assets/images/yaw_one.jpg";
+import { StaticImageData } from "next/image";
 
 type Programme = "petrochemical" | "chemical";
 
@@ -9,7 +10,7 @@ type PortfolioEntry = {
   portfolio: string;
   name: string;
   programme: Programme;
-  image: any;
+  image: StaticImageData;
 };
 
 type YearlyData = {
