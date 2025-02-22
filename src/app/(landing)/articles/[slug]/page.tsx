@@ -27,7 +27,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: Readonly<Props>): Promise<Metadata> {
+}: {
+  readonly params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
   const data: ArticleInterface = await client.fetch(findOneArticle, {
     slug,
@@ -47,7 +49,11 @@ export async function generateMetadata({
   };
 }
 
-export default async function page({ params }: Readonly<Props>) {
+export default async function ArticlePage({
+  params,
+}: {
+  readonly params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const data: ArticleInterface = await client.fetch(findOneArticle, {
     slug,
