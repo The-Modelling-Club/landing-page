@@ -7,6 +7,12 @@ const nextConfig: NextConfig = {
       {
         hostname: "ik.imagekit.io",
       },
+      {
+        hostname: "cdn.sanity.io",
+      },
+      {
+        hostname: "ui-avatars.com",
+      },
     ],
   },
 };
