@@ -87,6 +87,7 @@ export default async function page({ params }: Readonly<Props>) {
             width={2000}
             height={2000}
             className="h-full w-full rounded-lg object-cover object-bottom shadow-md"
+            priority
           />
         </div>
         <PortableText value={data.content} components={RichText} />
