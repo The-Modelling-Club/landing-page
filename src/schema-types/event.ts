@@ -78,30 +78,9 @@ export default defineType({
       validation: (rule) => rule.required().error("Start time is required"),
     }),
     defineField({
-      name: "end_time",
-      title: "End Time",
-      type: "string",
-      description: "When the event will end?",
-      validation: (rule) => rule.required().error("End time is required"),
-    }),
-    defineField({
       name: "body",
       title: "Body",
       type: "blockContent",
-    }),
-    defineField({
-      name: "created_at",
-      title: "Created At",
-      type: "datetime",
-      description: "When is this event post being created?",
-      validation: (rule) => rule.required().error("Created at is required"),
-    }),
-    defineField({
-      name: "likes",
-      title: "Likes",
-      type: "number",
-      initialValue: 0,
-      hidden: true,
     }),
   ],
 });
