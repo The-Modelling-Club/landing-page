@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@iconify/react": "^5.2.0",
+    "@portabletext/react": "^3.2.1",
     "@radix-ui/react-select": "^2.1.6",
     "@radix-ui/react-slot": "^1.1.1",
     "@sanity/client": "^6.28.0",
@@ -27,8 +28,8 @@
     "next-sanity": "^9.8.59",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sanity": "^3.76.1",
     "react-slot-counter": "^3.2.0",
+    "sanity": "^3.76.1",
     "sonner": "^1.7.4",
     "tailwind-merge": "^2.6.0"
   },

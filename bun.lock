@@ -5,6 +5,7 @@
       "name": "tmc-landing",
       "dependencies": {
         "@iconify/react": "^5.2.0",
+        "@portabletext/react": "^3.2.1",
         "@radix-ui/react-select": "^2.1.6",
         "@radix-ui/react-slot": "^1.1.1",
         "@sanity/client": "^6.28.0",
