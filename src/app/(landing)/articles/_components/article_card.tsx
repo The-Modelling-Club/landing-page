@@ -1,11 +1,14 @@
 "use client";
-import { ArticlePost } from "../page";
+import { ArticlesResponse } from "@/types/articles.interface";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ArticleCard({ article }: { article: ArticlePost }) {
+export default function ArticleCard({ article }: Readonly<ArticlesResponse>) {
   return (
-    <Link href={`/articles/${article.slug}`} className=" grid group border sm:grid-cols-[40%_auto]">
+    <Link
+      href={`/articles/${article.slug}`}
+      className=" grid group border sm:grid-cols-[40%_auto]"
+    >
       <section className=" max-h-[20rem] overflow-hidden">
         <Image
           src={article.image_url}
@@ -16,7 +19,9 @@ export default function ArticleCard({ article }: { article: ArticlePost }) {
         />
       </section>
       <section className="p-4">
-        <h4 className=" group-hover:underline font-heading font-semibold mb-3 text-xl">{article.title}</h4>
+        <h4 className=" group-hover:underline font-heading font-semibold mb-3 text-xl">
+          {article.title}
+        </h4>
         <p className=" line-clamp-3 text-pretty">{article.description}</p>
         <p className="  mt-3 text-primary text-sm">Read More...</p>
       </section>
