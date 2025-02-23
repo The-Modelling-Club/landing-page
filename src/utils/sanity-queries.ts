@@ -24,3 +24,15 @@ export const findOneArticle = groq`
     "image_url": image_url.asset -> url,
     }
 `;
+
+export const findExecutives = groq`
+  *[_type == 'executives' && academic_year == $activeYear][0] {
+  portfolio_entries[]->{
+    "id": _id,
+    name,
+    "image":image.asset->url ,
+    programme,
+    portfolio
+  }
+}
+`;

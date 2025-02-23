@@ -21,6 +21,13 @@ export default defineType({
       name: "programme",
       title: "Programme",
       type: "string",
+      options: {
+        list: [
+          { title: "Chemical", value: "chemical" },
+          { title: "Petrochemical", value: "petrochemical" },
+        ],
+        layout: "radio",
+      },
       validation: (rule) => rule.required().error("Programme is required"),
     }),
     defineField({
