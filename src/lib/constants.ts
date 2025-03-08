@@ -67,7 +67,7 @@ export const menuLinks = [
   },
   {
     name: "Events",
-    href: "/",
+    href: "/events",
     icon: "solar:documents-line-duotone",
     activeIcon: "solar:documents-bold-duotone",
     dropdown: false,
