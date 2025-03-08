@@ -2,7 +2,7 @@ import { Share2 } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { format, parseISO } from "date-fns";
-import { AllEvent } from "@/types/event.interface";
+import { AllEventInterface } from "@/types/event.interface";
 
 export default function EventCard({
   status,
@@ -11,7 +11,7 @@ export default function EventCard({
   date,
   start_time,
   description,
-}: Readonly<AllEvent>) {
+}: Readonly<AllEventInterface>) {
   const statusColor =
     status === "ongoing" ? "bg-green-500 text-green-100" : "text-red-500";
 
