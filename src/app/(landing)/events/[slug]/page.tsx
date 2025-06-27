@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: { readonly params: Promise<{ 
       title: data.title,
       description: data.description || `Join us for ${data.title} - an exciting engineering event hosted by The Modeling Club.`,
       url: `https://themodelingclub.com/events/${data.slug}`,
-      type: "event",
+      type: "website",
       images: data.event_img
         ? [
             {

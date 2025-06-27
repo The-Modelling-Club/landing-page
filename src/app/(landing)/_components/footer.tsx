@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { GithubIcon, LinkedinIcon, InstagramIcon, YoutubeIcon } from "lucide-react";
+import { GithubIcon, LinkedinIcon, InstagramIcon, YoutubeIcon, TwitterIcon } from "lucide-react";
 import Image from "next/image";
 import { Spinner } from "./spinner";
 // import Logo from "@/app/assets/logo.png";
@@ -124,11 +124,21 @@ export default function Footer() {
             <a href="https://www.instagram.com/botr.app?igsh=bG92OWliMHFjYmF3" target="_blank" rel="noopener noreferrer">
               <InstagramIcon size={16} className="hover:text-secondary transition-all duration-300 cursor-pointer hover:-translate-y-1" />
             </a>
-            <Link href="https://www.linkedin.com/company/built-on-the-rock-app?trk=ppro_cprof" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://www.linkedin.com/posts/the-modelling-club-knust_lesson-2-introduction-to-aspen-plus-ii-activity-7338663330003267585-VJHe?utm_source=share&utm_medium=member_android&rcm=ACoAAAe8sUUBJlkaSBYFYmSxFPxXZLHPrklBW7Y"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <LinkedinIcon size={16} className="hover:text-secondary transition-all duration-300 cursor-pointer hover:-translate-y-1" />
             </Link>
             <a href="https://github.com/The-Modelling-Club/" target="_blank" rel="noopener noreferrer">
               <GithubIcon size={16} className="hover:text-secondary transition-all duration-300 cursor-pointer hover:-translate-y-1" />
+            </a>
+            <a href="https://youtu.be/iM-ntgPggVE?si=gE2Y4LrcLO1ZpyeP" target="_blank" rel="noopener noreferrer">
+              <YoutubeIcon size={16} className="hover:text-secondary transition-all duration-300 cursor-pointer hover:-translate-y-1" />
+            </a>
+            <a href="https://x.com/ClubModelling?t=KV1qZQJxePqyicrpJZtIkw&s=08">
+              <TwitterIcon size={16} className="hover:text-secondary transition-all duration-300 cursor-pointer hover:-translate-y-1" />
             </a>
           </div>
         </section>
