@@ -2,38 +2,35 @@ import Accordion from "@/components/accordion";
 
 const faqs = [
   {
-    question: "How can we increase the number of users on our The Modelling Club account? ",
+    question: "How can I become a member of The Modeling Club?",
     answer:
-      "Prior to onboarding, you were only able to add up to 300 users with the Core Plan. This was to ensure you were set up structurally. Now that you have successfully onboarded, you can upgrade to any number you desire by selecting the relevant plan applicable to your needs from the Billing section.",
+      "To join The Modeling Club, simply fill out our membership form available on our website. We welcome students from all engineering disciplines who are interested in Computer-Aided Engineering and simulation. No prior experience is required - we'll teach you everything you need to know.",
   },
   {
-    question: "How do we update or modify our Mental Health Advocates (MHAs)? ",
+    question: "What software and tools will I learn to use?",
     answer:
-      "Churches can update their MHA team through the admin dashboard by adding or removing individuals as needed. New MHAs will need to complete the mandatory training to support your church effectively.",
+      "Our club provides training in industry-standard tools including MATLAB for mathematical modeling, Aspen Plus for chemical process simulation, AutoCad for computer-aided design, VBA in Excel for automation, and Ansys for Computational Fluid Dynamics (CFD).",
   },
   {
-    question: "What kind of support does The Modelling Club provide us now that we have signed up?",
-    answer: "We offer ongoing support through our Church Success Managers, who are always available to assist with any questions or technical support.",
+    question: "What kind of projects will I work on as a member?",
+    answer:
+      "You'll work on real engineering projects across all process engineering fields including wastewater treatment, green hydrogen production, Computational Fluid Dynamics (CFD), oil and gas exploration, bioenergy optimization. Our projects cover the full spectrum of chemical and process engineering applications.",
   },
   {
-    question: "What happens if an MHA feels overwhelmed or unqualified to help a member?",
+    question: "Do I need prior experience with modeling software?",
     answer:
-      "The Modelling Club ensures MHAs receive adequate training to know when to escalate cases to professionals. Our platform also includes tools to help MHAs guide members towards professional mental health services when necessary. MHAs can also reach out to their assigned MHA to discuss any concerns they may have.",
+      "No prior experience is required! We provide comprehensive training from the basics to advanced applications. Our experienced members and mentors will guide you through each step, making complex tools accessible to beginners.",
   },
   {
-    question: "How can I track the mental health progress of our congregation?",
+    question: "How will joining The Modeling Club help my career?",
     answer:
-      "The The Modelling Club admin dashboard includes tools to help track the usage of the platform to seek mental health support through the number of sessions scheduled, prevalent areas of support and feedback from members about the mental health support they receive.",
+      "The Modeling Club provides practical experience with industry-standard tools that employers value. You'll build a portfolio of real projects, develop problem-solving skills, and network with professionals in the engineering field. Many of our alumni have secured internships and jobs in top engineering companies.",
   },
+
   {
-    question: "Can we schedule additional training sessions after onboarding?",
+    question: "How often does the club meet and what are the time commitments?",
     answer:
-      "Yes, churches can request additional training for MHAs by getting in touch with your assigned Church Success Manager. We are available to provide ongoing support to strengthen your mental health system.",
-  },
-  {
-    question: "How do we handle data privacy and confidentiality on the platform?",
-    answer:
-      "The Modelling Club complies with strict data privacy regulations to ensure that member information and mental health records are confidential and secure. We are GDPR and HIPPA compliant.",
+      "We occassionally hold in-person training sessions for hands-on software practice and project work, and online webinars for specialized topics and guest lectures. The time commitment is flexible - you can participate as much or as little as your schedule allows.",
   },
 ];
 

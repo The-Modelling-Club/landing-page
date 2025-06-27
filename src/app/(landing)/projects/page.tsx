@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { projects } from "./_constants/projects";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import GT from "@/app/assets/images/GT.png";
+import VCR from "@/app/assets/images/VCR.png";
 
 export default function ServicesPage() {
   const router = useRouter();
@@ -18,13 +20,7 @@ export default function ServicesPage() {
           return (
             <section key={s.id} id={s.name.toLocaleLowerCase().replaceAll(" ", "-")} className="grid scroll-m-24 md:grid-cols-2 mb-20  gap-6">
               <div className=" h-72 rounded-lg overflow-hidden">
-                <Image
-                  src={"https://ik.imagekit.io/i7gyrkpch/bio%20energy.jpg?updatedAt=1738408243676"}
-                  width={1000}
-                  height={1000}
-                  alt="service"
-                  className=" h-full object-cover w-full "
-                />
+                <Image src={s.imageUrl} width={1000} height={1000} alt="service" className=" h-full object-cover w-full " />
               </div>
               <div>
                 <h3 className=" text-primary font-bold text-2xl mb-6">

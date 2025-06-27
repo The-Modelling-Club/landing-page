@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        statistic: "url('/jro_rich.jpg')",
+        statistic: "url('/about.jpg')",
       },
       colors: {
         primary: "#2C323E",

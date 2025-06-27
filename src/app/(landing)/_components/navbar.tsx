@@ -10,6 +10,7 @@ import { menuLinks } from "@/lib/constants";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
+import TmcLogo from "@/app/assets/images/tmc_logo.png";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -37,7 +38,7 @@ const Navbar = () => {
   }, [isSidebarOpen]);
 
   return (
-    <>
+    <div>
       <AnimatePresence>
         {isSidebarOpen && (
           <MobileSidebar
@@ -51,8 +52,7 @@ const Navbar = () => {
 
       <nav className={"sticky top-0 z-[9999] bg-white/70 backdrop-blur-lg saturate-200 flex max-w-full items-center justify-between border-b p-4 lg:hidden"}>
         <Link onClick={() => setIsSidebarOpen(false)} href={"/"}>
-          {/* <Image src={"/logo_dark.png"} alt={"tmc's logo"} width={100} height={80} className={""} /> */}
-          <p>The Modeling Club</p>
+          <Image src={TmcLogo} alt={"tmc's logo"} width={60} height={60} className={"mx-auto h-full w-full object-cover"} />
         </Link>
         <button
           className={"bg-slate-50 grid place-content-center rounded-full size-11 lg:hidden"}
@@ -64,34 +64,47 @@ const Navbar = () => {
           <Icon icon={`${isSidebarOpen ? "material-symbols:close" : "solar:hamburger-menu-line-duotone"}`} width={20} />
         </button>
       </nav>
-      <header className="hidden lg:block py-4 px-6 sticky top-0 z-[9999] mx-6">
-        <nav
-          className="flex items-center justify-between gap-10 bg-white/90 backdrop-blur-md rounded-full border border-gray-200/50 py-3 px-8"
-          style={{ boxShadow: "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px" }}
-        >
-          <Link href={"/"} className="h-12 grid place-content-center overflow-hidden">
-            {/* <Image src={"/logo_dark.png"} alt={"tmc's logo"} width={80} height={10} className={"mx-auto h-full w-full object-cover"} /> */}
-            <p className="font-semibold text-lg">The Modeling Club</p>
-          </Link>
-          <ul className="flex ml-auto gap-6">
-            {menuLinks.map((item) => (
-              <li
-                key={item.name}
-                className={`relative group ${isActive(item.href) ? "text-secondary" : "text-gray-700"} hover:text-secondary transition-colors duration-200`}
-              >
-                <Link
-                  href={item.href}
-                  className={`${!item.dropdown ? "hover:underline hover:underline-offset-4" : ""} ease-in duration-100 flex items-center gap-2 font-medium`}
+      <header className="hidden lg:block w-[calc(100%-24px)] py-4 px-6 fixed top-0 z-[9999] mx-6">
+        <div className="flex items-center justify-between gap-4">
+          {/* Logo - Left floating element */}
+          <div className="bg-white/40 border border-gray-200/50 pl-2 pr-4 flex items-center gap-2 saturate-150 backdrop-blur rounded-full ">
+            <Link href={"/"} className="h-16 grid place-content-center overflow-hidden">
+              <Image src={TmcLogo} alt={"tmc's logo"} width={40} height={40} className={"mx-auto h-full w-full object-cover"} />
+            </Link>
+            <span className="font-semibold text-gray-700">The Modeling Club</span>
+          </div>
+
+          {/* Nav Links - Center floating element */}
+          <div className="bg-white/40 saturate-150 backdrop-blur rounded-full border border-gray-200/50 py-3 h-16 px-12">
+            <ul className="flex items-center justify-center h-full gap-6">
+              {menuLinks.map((item) => (
+                <li
+                  key={item.name}
+                  className={`relative group ${isActive(item.href) ? "text-secondary" : "text-gray-700"} hover:text-secondary transition-colors duration-200`}
                 >
-                  {item.name} {item.dropdown && <ChevronDownIcon size={14} />}
-                </Link>
-                {item.dropdown && item.dropdown}
-              </li>
-            ))}
-          </ul>
-        </nav>
+                  <Link href={item.href} className={` ease-in duration-100 flex items-center gap-2 font-medium`}>
+                    {item.name} {item.dropdown && <ChevronDownIcon size={14} />}
+                  </Link>
+                  {item.dropdown && item.dropdown}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Membership Icon - Right floating element */}
+          <div className="bg-white/40 saturate-150  backdrop-blur rounded-full border border-gray-200/50 ">
+            <Link
+              href="https://forms.gle/gkK1mkfs66EjzyDV8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-16 h-16 transition-colors duration-200 rounded-full"
+            >
+              <Icon icon="solar:user-plus-bold" width={24} />
+            </Link>
+          </div>
+        </div>
       </header>
-    </>
+    </div>
   );
 };
 

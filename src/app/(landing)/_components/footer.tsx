@@ -10,6 +10,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { FormEvent, useState } from "react";
 import { toast } from "sonner";
 import axios, { AxiosError } from "axios";
+import Logo from "@/app/assets/images/tmc_logo.png";
 // import { Spinner } from "@/shared/spinner";
 
 export default function Footer() {
@@ -38,14 +39,14 @@ export default function Footer() {
     <footer className=" text-sm border-t z-10 p-4 lg:p-12 pt-12 w-full bg-primary text-white mt-20 ">
       <div className="flex justify-between flex-col lg:flex-row">
         <div className="flex flex-col mx-auto lg:mx-0 w-fit">
-          .logo
-          {/* <Image src={Logo} alt="logo" width={300} height={300} className="object-cover mx-auto lg:mx-0 " /> */}
+          <Image src={Logo} alt="logo" width={50} height={50} className="object-cover mx-auto lg:mx-0 " />
+          <span className="text-2xl mt-2 font-semibold">The Modeling Club</span>
           <div className="max-w-sm mt-4 text-center lg:text-left mb-6">
-            <p className=" ">Your go-to solution for residential, commercial and event cleaning services.</p>
+            <p className=" ">Your go-to solution for Computer-Aided Engineering and simulation.</p>
           </div>
           <div className="text-center lg:text-left mb-4">
             <h4 className=" font-semibold mb-2">Locations</h4>
-            <p>Mississauga, Brampton, Caledon, Oakville, Milton, and Halton Hills.</p>
+            <p>Department of Chemical Engineering, KNUST</p>
           </div>
         </div>
         <section className=" flex flex-col   gap-6 lg:gap-16 lg:flex-row lg:pr-12">
@@ -72,9 +73,9 @@ export default function Footer() {
               <Link href={"/projects#gas-turbine-simulator"} className="hover:text-secondary hover:translate-x-2 transition-all duration-300">
                 Gas Turbine Simulator
               </Link>
-              <Link href={"/projects#chemcost"} className="hover:text-secondary hover:translate-x-2 transition-all duration-300">
+              {/* <Link href={"/projects#chemcost"} className="hover:text-secondary hover:translate-x-2 transition-all duration-300">
                 ChemCost
-              </Link>
+              </Link> */}
             </div>
           </div>
         </section>
