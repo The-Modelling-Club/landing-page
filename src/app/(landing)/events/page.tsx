@@ -47,7 +47,7 @@ export default async function Event() {
         <h1 className="text-4xl lg:text-6xl font-semibold mb-3">All Events</h1>
         <p>Register for an upcoming event, join us for an ongoing event and read about past events here, like and share your thoughts on them.</p>
       </div>
-      <div className="container mx-auto px-8  mb-28 grid grid-cols-1 md:grid-cols-3 w-screen place-content-center gap-8">
+      <div className="container mx-auto px-2  mb-28 grid grid-cols-1 md:grid-cols-3 w-screen place-content-center gap-8">
         {/* Card */}
         {events.map((event: EventInterface) => (
           <EventRoute to={`/events/${event.slug}`} key={event.slug}>

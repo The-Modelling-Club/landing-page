@@ -40,7 +40,7 @@ export default function Footer() {
       <div className="flex justify-between flex-col lg:flex-row">
         <div className="flex flex-col mx-auto lg:mx-0 w-fit">
           <Image src={Logo} alt="logo" width={50} height={50} className="object-cover mx-auto lg:mx-0 " />
-          <span className="text-2xl mt-2 font-semibold">The Modeling Club</span>
+          <span className="text-2xl mt-2 text-center md:text-left font-semibold">The Modeling Club</span>
           <div className="max-w-sm mt-4 text-center lg:text-left mb-6">
             <p className=" ">Your go-to solution for Computer-Aided Engineering and simulation.</p>
           </div>

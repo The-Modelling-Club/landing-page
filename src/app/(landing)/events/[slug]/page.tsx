@@ -81,24 +81,20 @@ export default async function SingleEvent({ params }: { readonly params: Promise
       <div className="mt-10 text-left">
         <h1 className="text-4xl font-bold">{event.title}</h1>
       </div>
-      <div className="mt-5 flex flex-col items-start border-y py-4 text-left md:flex-row md:items-center">
-        <div className="flex flex-1 flex-col items-start gap-4 md:flex-row md:items-center md:gap-x-6">
+      <div className="mt-5 flex flex-col items-start border-b py-4 text-left md:flex-row md:items-center">
+        <div className="flex flex-1 items-start gap-4 flex-row md:items-center md:gap-x-6">
           <div className="flex items-center gap-5">
-            <Calendar size={20} className="text-gray-500" />
-            <p className="text-lg text-gray-600">{format(parseISO(event.date), "PPP")}</p>
+            <Calendar size={14} className="text-gray-500" />
+            <p className="text-sm text-gray-600">{format(parseISO(event.date), "PPP")}</p>
           </div>
           <div className="flex items-center gap-5">
-            <MapPin size={20} className="text-gray-500" />
-            <p className="text-lg text-gray-600">{event.location}</p>
+            <MapPin size={14} className="text-gray-500" />
+            <p className="text-sm text-gray-600">{event.location}</p>
           </div>
         </div>
-        <ShareEventPost title={event.title} />
+        {/* <ShareEventPost title={event.title} /> */}
       </div>
       <PortableText value={event.body} components={RichText} />
-
-      <div className="mt-10 flex items-center justify-between border-y py-4">
-        <ShareEventPost title={event.title}>Share</ShareEventPost>
-      </div>
     </section>
   );
 }
