@@ -1,6 +1,3 @@
-import { Card } from "@/components/ui/card";
-import Link from "next/link";
-import { Icon } from "@iconify/react/dist/iconify.js";
 import Accordion from "@/components/accordion";
 
 const faqs = [

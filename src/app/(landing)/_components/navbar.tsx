@@ -13,7 +13,6 @@ import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const navRef = useRef<HTMLElement>(null);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -36,27 +35,6 @@ const Navbar = () => {
       window.removeEventListener("keydown", handleEsc);
     };
   }, [isSidebarOpen]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const navbar = navRef.current;
-      if (navbar) {
-        const rect = navbar.getBoundingClientRect();
-        const isAtTop = rect.top === 0;
-        if (isAtTop) {
-          navbar.classList.add("border-b");
-          return;
-        }
-        navbar.classList.remove("border-b");
-      }
-    };
-
-    document.addEventListener("scroll", handleScroll);
-
-    return () => {
-      document.removeEventListener("scroll", handleScroll);
-    };
-  });
 
   return (
     <>
@@ -86,18 +64,24 @@ const Navbar = () => {
           <Icon icon={`${isSidebarOpen ? "material-symbols:close" : "solar:hamburger-menu-line-duotone"}`} width={20} />
         </button>
       </nav>
-      <header ref={navRef} className="hidden transition-colors  bg-white/80 saturate-150 backdrop-blur-md lg:block py-2 px-6 sticky top-0 b z-[9999]">
-        <nav className=" flex items-center justify-between  gap-10">
-          <Link href={"/"} className=" h-16 grid place-content-center overflow-hidden ">
+      <header className="hidden lg:block py-4 px-6 sticky top-0 z-[9999] mx-6">
+        <nav
+          className="flex items-center justify-between gap-10 bg-white/90 backdrop-blur-md rounded-full border border-gray-200/50 py-3 px-8"
+          style={{ boxShadow: "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px" }}
+        >
+          <Link href={"/"} className="h-12 grid place-content-center overflow-hidden">
             {/* <Image src={"/logo_dark.png"} alt={"tmc's logo"} width={80} height={10} className={"mx-auto h-full w-full object-cover"} /> */}
-            <p>The Modeling Club</p>
+            <p className="font-semibold text-lg">The Modeling Club</p>
           </Link>
-          <ul className=" flex ml-auto gap-4">
+          <ul className="flex ml-auto gap-6">
             {menuLinks.map((item) => (
-              <li key={item.name} className={`relative group ${isActive(item.href ? "text-secondary" : "text-red-500")} hover:text-secondary`}>
+              <li
+                key={item.name}
+                className={`relative group ${isActive(item.href) ? "text-secondary" : "text-gray-700"} hover:text-secondary transition-colors duration-200`}
+              >
                 <Link
                   href={item.href}
-                  className={` ${!item.dropdown ? "hover:underline hover:underline-offset-4" : ""} ease-in duration-100 flex items-center gap-2`}
+                  className={`${!item.dropdown ? "hover:underline hover:underline-offset-4" : ""} ease-in duration-100 flex items-center gap-2 font-medium`}
                 >
                   {item.name} {item.dropdown && <ChevronDownIcon size={14} />}
                 </Link>

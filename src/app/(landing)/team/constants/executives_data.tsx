@@ -66,7 +66,7 @@ export const EXECUTIVES: YearlyData = {
 
     {
       portfolio: "PRO",
-      name: "Okoh Felix Randy",
+      name: "Okoe Felix Randy",
       programme: "chemical",
       image: ImageOne,
     },
