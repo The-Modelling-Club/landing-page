@@ -8,10 +8,10 @@ import ImageThree from "@/app/assets/images/eddie_chrysler.jpg";
 import ImageFour from "@/app/assets/images/dr_jude.jpg";
 import ImageFive from "@/app/assets/images/jro_rich.jpg";
 import ImageSix from "@/app/assets/images/IMG_0338.jpg";
-
+import ImageSeven from "@/app/assets/images/otieku.jpg";
 import ImageNine from "@/app/assets/images/IMG_0358.jpg";
 import ImageTen from "@/app/assets/images/dr jude.jpg";
-
+import ImageEight from "@/app/assets/images/martin.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -36,9 +36,14 @@ export function HeroCarousel() {
     {
       image: ImageSix,
     },
-
+    {
+      image: ImageSeven,
+    },
     {
       image: ImageNine,
+    },
+    {
+      image: ImageEight,
     },
     {
       image: ImageTen,

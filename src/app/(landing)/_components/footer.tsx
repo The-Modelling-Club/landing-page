@@ -121,9 +121,6 @@ export default function Footer() {
         </section> */}
         <section>
           <div className="flex justify-center py-6 gap-4">
-            <a href="https://www.instagram.com/botr.app?igsh=bG92OWliMHFjYmF3" target="_blank" rel="noopener noreferrer">
-              <InstagramIcon size={16} className="hover:text-secondary transition-all duration-300 cursor-pointer hover:-translate-y-1" />
-            </a>
             <Link
               href="https://www.linkedin.com/posts/the-modelling-club-knust_lesson-2-introduction-to-aspen-plus-ii-activity-7338663330003267585-VJHe?utm_source=share&utm_medium=member_android&rcm=ACoAAAe8sUUBJlkaSBYFYmSxFPxXZLHPrklBW7Y"
               target="_blank"
