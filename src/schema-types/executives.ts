@@ -12,7 +12,7 @@ export default defineType({
       validation: (rule) => rule.required().error("Academic year is required"),
     }),
     defineField({
-      name: "portofolio_entries",
+      name: "portfolio_entries",
       title: "Portfolio Entries",
       type: "array",
       of: [
