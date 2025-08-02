@@ -4,6 +4,8 @@ import { ArticleInterface } from "@/types/articles.interface";
 import { findAllArticles } from "@/utils/sanity-queries";
 import { Metadata } from "next";
 
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: "Articles | The Modeling Club - KNUST",
   description:
