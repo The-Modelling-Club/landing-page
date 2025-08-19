@@ -1,13 +1,12 @@
 "use client";
-import { Document, Page, pdfjs } from "react-pdf";
 import { useEffect, useState } from "react";
-import "react-pdf/dist/Page/AnnotationLayer.css";
-import "react-pdf/dist/Page/TextLayer.css";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Download, MinusIcon, PlusIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+import "react-pdf/dist/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/TextLayer.css";
+
 const MIN_SIZE = 0.5;
 const INITIAL_SIZE_DESKTOP = 1.2;
 const INCREMENTAL_SIZE = 0.2;
@@ -28,13 +27,47 @@ export default function PdfViewer({
   initialScale = INITIAL_SIZE_DESKTOP,
 }: Readonly<PdfViewerProps>) {
   const isMobile = useIsMobile();
+  const [PdfComponents, setPdfComponents] = useState<any>(null);
   const [numPages, setNumPages] = useState<number>(0);
   const [error, setError] = useState<string>("");
   const [scale, setScale] = useState<number>(initialScale);
+  const [loading, setLoading] = useState(true);
+  const [isClient, setIsClient] = useState(false);
+
+  // Ensure we're on client side
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
-    setScale(isMobile ? MIN_SIZE : INITIAL_SIZE_DESKTOP);
-  }, [isMobile]);
+    if (!isClient) return;
+
+    const loadPdfComponents = async () => {
+      try {
+        // Load PDF.js and react-pdf sequentially to avoid race conditions
+        const reactPdf = await import("react-pdf");
+        const { Document, Page, pdfjs } = reactPdf;
+
+        // Configure worker after everything is loaded
+        pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+
+        setPdfComponents({ Document, Page });
+        setLoading(false);
+      } catch (err) {
+        console.error("Failed to load PDF components:", err);
+        setError("Failed to load PDF viewer");
+        setLoading(false);
+      }
+    };
+
+    loadPdfComponents();
+  }, [isClient]);
+
+  useEffect(() => {
+    if (!loading && isClient) {
+      setScale(isMobile ? MIN_SIZE : INITIAL_SIZE_DESKTOP);
+    }
+  }, [isMobile, loading, isClient]);
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages);
@@ -54,7 +87,7 @@ export default function PdfViewer({
   };
 
   const resetZoom = () => {
-    setScale(initialScale);
+    setScale(isMobile ? MIN_SIZE : INITIAL_SIZE_DESKTOP);
   };
 
   const handleDownload = () => {
@@ -65,7 +98,16 @@ export default function PdfViewer({
     document.body.removeChild(link);
   };
 
-  if (error) {
+  if (!isClient || loading) {
+    return (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+        <span className="ml-2 text-gray-600">Loading PDF viewer...</span>
+      </div>
+    );
+  }
+
+  if (error || !PdfComponents) {
     return (
       <div className="flex flex-col items-center p-4">
         <div className="text-red-600 text-center">
@@ -75,6 +117,8 @@ export default function PdfViewer({
       </div>
     );
   }
+
+  const { Document, Page } = PdfComponents;
 
   return (
     <div className={`flex flex-col items-center ${className}`}>
