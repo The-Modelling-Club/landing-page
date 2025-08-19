@@ -4,8 +4,6 @@ import { ArticleInterface } from "@/types/articles.interface";
 import { findAllArticles } from "@/utils/sanity-queries";
 import { Metadata } from "next";
 
-export const revalidate = 0;
-
 export const metadata: Metadata = {
   title: "Articles | The Modeling Club - KNUST",
   description:
@@ -38,6 +36,8 @@ export const metadata: Metadata = {
     canonical: "/articles",
   },
 };
+
+export const revalidate = 5;
 
 export default async function ArticlesPage() {
   const data: ArticleInterface[] = await client.fetch(findAllArticles);
