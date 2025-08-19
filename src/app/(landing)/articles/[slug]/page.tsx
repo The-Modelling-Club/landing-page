@@ -96,7 +96,7 @@ export default async function ArticlePage({
 
   return (
     <section className="mx-auto flex w-full flex-col items-center justify-center p-4 md:w-[85dvw]">
-      <div className="my-8">
+      <div className="my-8 w-full">
         <div className="mt-6">
           <BackButton />
         </div>
@@ -130,7 +130,7 @@ export default async function ArticlePage({
           />
         </div>
         {/* <PortableText value={data.content} components={RichText} /> */}
-        <div className="border border-gray-200 rounded-lg w-[80dvw]">
+        <div className="border border-gray-200 rounded-lg w-full">
           <PdfViewer
             url={data.manuscriptUrl}
             is_downloadable={data.is_downloadable}
