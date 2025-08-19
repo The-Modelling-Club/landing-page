@@ -32,8 +32,6 @@ export default function PdfViewer({
   const [error, setError] = useState<string>("");
   const [scale, setScale] = useState<number>(initialScale);
 
-  console.log("isMobile?", isMobile ? MIN_SIZE : INITIAL_SIZE_DESKTOP);
-
   useEffect(() => {
     setScale(isMobile ? MIN_SIZE : INITIAL_SIZE_DESKTOP);
   }, [isMobile]);
