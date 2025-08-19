@@ -9,6 +9,8 @@ export interface ArticleInterface {
   content: TypedObject;
   authors: AuthorInterface[];
   image_url: string;
+  manuscriptUrl: string;
+  is_downloadable: boolean;
 }
 
 export interface ArticlesResponse {
