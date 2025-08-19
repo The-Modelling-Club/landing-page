@@ -4,6 +4,7 @@ import article from "./article";
 import authors from "./authors";
 import executives from "./executives";
 import executive_portfolio from "./executive_portfolio";
+import manuscript from "./manuscript";
 
 export const schemaTypes = [
   event,
@@ -12,4 +13,5 @@ export const schemaTypes = [
   authors,
   executives,
   executive_portfolio,
+  manuscript,
 ];

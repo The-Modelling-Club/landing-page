@@ -66,3 +66,28 @@ export const findEvent = groq`*[_type == 'events' && slug.current == $slug][0]{
     description,
     created_at,
 } `;
+
+export const findManuscripts = groq`*[_type == 'manuscript']{
+  "id": _id,
+    authors[]->{
+    "id": _id,
+    author_name
+  },
+    title,
+    description,
+    "image_url": image_url.asset->url,
+    "manuscriptUrl": pdfFile.asset->url
+} `;
+
+export const findManuScriptById = groq`*[_type == 'manuscript' && _id == $slug][0]{
+  "id": _id,
+  authors[]->{
+    "id": _id,
+    author_name
+  },
+    title,
+    description,
+    is_downloadable,
+    "image_url": image_url.asset->url,
+    "manuscriptUrl": pdfFile.asset->url
+}`;
