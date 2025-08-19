@@ -1,5 +1,5 @@
 "use client";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { Viewer, Worker, SpecialZoomLevel } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -20,6 +20,12 @@ export default function PdfViewer({
   const isMobile = useIsMobile();
   // Must be created at top level and unconditionally to satisfy React Hooks rules
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
+
+  useEffect(() => {
+    if (isMobile && url) {
+      window.location.href = url;
+    }
+  }, [isMobile, url]);
   const handleDownload = useCallback(() => {
     const link = document.createElement("a");
     link.href = `${url}?dl=tmc-research-paper-${Date.now()}.pdf`;
@@ -42,11 +48,11 @@ export default function PdfViewer({
       )} */}
       <div className="w-full overflow-hidden  h-[80vh] min-w-0">
         {isMobile ? (
-          <iframe
-            title="PDF"
-            src={`${url}#view=FitH`}
-            className="h-full w-full"
-          />
+          <div className="flex h-full w-full items-center justify-center text-sm text-gray-600">
+            <a href={url} className="underline">
+              Open PDF
+            </a>
+          </div>
         ) : (
           <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
             <Viewer
