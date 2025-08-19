@@ -1,7 +1,7 @@
 import ArticleCard from "./_components/article_card";
 import { client } from "@/client";
 import { ArticleInterface } from "@/types/articles.interface";
-import { findAllArticles } from "@/utils/sanity-queries";
+import { findManuscripts } from "@/utils/sanity-queries";
 import { Metadata } from "next";
 
 export const revalidate = 0;
@@ -40,7 +40,9 @@ export const metadata: Metadata = {
 };
 
 export default async function ArticlesPage() {
-  const data: ArticleInterface[] = await client.fetch(findAllArticles);
+  const data: ArticleInterface[] = await client.fetch(findManuscripts, {
+    revalidate: 0,
+  });
 
   if (!data) {
     return <div>Error</div>;
