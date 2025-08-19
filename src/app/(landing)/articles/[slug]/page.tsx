@@ -1,12 +1,10 @@
 import { client } from "@/client";
 import BackButton from "@/components/back-button";
-import { RichText } from "@/components/text-editor";
 import { urlFor } from "@/lib/url-for";
 import { ArticleInterface } from "@/types/articles.interface";
 import { AuthorInterface } from "@/types/authors.interface";
 import { findAllArticles, findManuScriptById } from "@/utils/sanity-queries";
 import { Metadata } from "next";
-import { PortableText } from "next-sanity";
 import Image from "next/image";
 import React from "react";
 import PdfViewer from "../_components/pdf-viewer";
@@ -103,7 +101,7 @@ export default async function ArticlePage({
           <BackButton />
         </div>
         <p className="py-4 text-3xl font-semibold leading-[1.6] text-neutral-700 md:text-5xl md:leading-[4rem] lg:text-center">
-          {data.title}
+          {data?.title}
         </p>
         <div className="my-5 flex flex-row items-center gap-2 md:gap-x-4 lg:justify-center">
           <section className="flex flex-col items-start justify-center lg:flex-row lg:items-center">
@@ -114,7 +112,7 @@ export default async function ArticlePage({
                   : "Unknown Author"}
               </span>
             </p>
-            {authors.length > 1 && (
+            {authors?.length > 1 && (
               <span className="hidden px-2 text-lg text-gray-500 md:block">
                 &#x2022;
               </span>
@@ -123,8 +121,8 @@ export default async function ArticlePage({
         </div>
         <div className="my-14 w-full hidden md:h-[20rem]">
           <Image
-            src={urlFor(data.image_url).url()}
-            alt={data.title}
+            src={urlFor(data?.image_url)?.url()}
+            alt={data?.title}
             width={2000}
             height={2000}
             className="h-full w-full rounded-lg object-cover object-bottom shadow-md"
