@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function ArticleCard({ article }: Readonly<ArticlesResponse>) {
   return (
     <Link
-      href={`/articles/${article.slug}`}
+      href={`/articles/${article.id}`}
       className=" grid group border sm:grid-cols-[40%_auto]"
     >
       <section className=" max-h-[20rem] overflow-hidden">
