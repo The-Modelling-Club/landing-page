@@ -2,6 +2,7 @@
 import { useCallback } from "react";
 import { Viewer, Worker, SpecialZoomLevel } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 
@@ -16,6 +17,7 @@ export default function PdfViewer({
   is_downloadable = false,
   className = "",
 }: Readonly<PdfViewerProps>) {
+  const isMobile = useIsMobile();
   const handleDownload = useCallback(() => {
     const link = document.createElement("a");
     link.href = `${url}?dl=tmc-research-paper-${Date.now()}.pdf`;
@@ -37,13 +39,21 @@ export default function PdfViewer({
         </div>
       )} */}
       <div className="w-full overflow-hidden  h-[80vh] min-w-0">
-        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
-          <Viewer
-            fileUrl={url}
-            defaultScale={SpecialZoomLevel.PageWidth}
-            plugins={[defaultLayoutPlugin()]}
+        {isMobile ? (
+          <iframe
+            title="PDF"
+            src={`${url}#view=FitH`}
+            className="h-full w-full"
           />
-        </Worker>
+        ) : (
+          <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+            <Viewer
+              fileUrl={url}
+              defaultScale={SpecialZoomLevel.PageWidth}
+              plugins={[defaultLayoutPlugin()]}
+            />
+          </Worker>
+        )}
       </div>
     </div>
   );
