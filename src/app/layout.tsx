@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Cormorant } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 const geistSans = Bricolage_Grotesque({
   variable: "--font-paragraph",
   subsets: ["latin"],
@@ -15,7 +17,8 @@ const heading = Cormorant({
 
 export const metadata: Metadata = {
   title: "The Modelling Club - KNUST",
-  description: "Providing local solutions through the use of Computer Aided Engineering",
+  description:
+    "Providing local solutions through the use of Computer Aided Engineering",
 };
 
 export default function RootLayout({
