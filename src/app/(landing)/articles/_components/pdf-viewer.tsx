@@ -18,6 +18,8 @@ export default function PdfViewer({
   className = "",
 }: Readonly<PdfViewerProps>) {
   const isMobile = useIsMobile();
+  // Must be created at top level and unconditionally to satisfy React Hooks rules
+  const defaultLayoutPluginInstance = defaultLayoutPlugin();
   const handleDownload = useCallback(() => {
     const link = document.createElement("a");
     link.href = `${url}?dl=tmc-research-paper-${Date.now()}.pdf`;
@@ -50,7 +52,7 @@ export default function PdfViewer({
             <Viewer
               fileUrl={url}
               defaultScale={SpecialZoomLevel.PageWidth}
-              plugins={[defaultLayoutPlugin()]}
+              plugins={[defaultLayoutPluginInstance]}
             />
           </Worker>
         )}
